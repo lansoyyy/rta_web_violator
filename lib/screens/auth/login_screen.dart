@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rta_web/screens/home_screen.dart';
+import 'package:rta_web/screens/home_screen.dart';
 import 'package:rta_web/utlis/colors.dart';
 import 'package:rta_web/widgets/button_widget.dart';
 import 'package:rta_web/widgets/text_widget.dart';
@@ -13,8 +14,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final username = TextEditingController();
-  final password = TextEditingController();
+  final reference = TextEditingController();
+  final license = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
               elevation: 10,
               child: Container(
                 width: 350,
-                height: 400,
+                height: 350,
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: primary,
@@ -88,56 +89,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              color: primary.withOpacity(0.2),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: TextWidget(
-                                text: 'ADMIN',
-                                fontSize: 14,
-                                fontFamily: 'Bold',
-                                color: primary,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          TextWidget(
-                            text: 'ENFORCER',
-                            fontSize: 14,
-                            fontFamily: 'Bold',
-                            color: green,
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 50,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          left: 20,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            TextWidget(
-                              text: 'Login',
-                              fontSize: 14,
-                              fontFamily: 'Bold',
-                            ),
-                            TextWidget(
-                              text: 'Please input admin name and password',
-                              fontSize: 12,
-                              fontFamily: 'Regular',
-                            ),
-                          ],
+                      Center(
+                        child: TextWidget(
+                          text: 'TRAFFIC CITATION TICKET',
+                          fontSize: 14,
+                          fontFamily: 'Bold',
+                          color: primary,
                         ),
                       ),
                       const SizedBox(
@@ -145,8 +102,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       Center(
                         child: TextFieldWidget(
-                          controller: username,
-                          label: 'Admin username',
+                          controller: reference,
+                          label: 'Reference number',
                         ),
                       ),
                       const SizedBox(
@@ -154,14 +111,27 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       Center(
                         child: TextFieldWidget(
-                          showEye: true,
-                          isObscure: true,
-                          controller: password,
-                          label: 'Password',
+                          controller: license,
+                          label: 'License number',
                         ),
                       ),
                       const SizedBox(
                         height: 25,
+                      ),
+                      Center(
+                        child: SizedBox(
+                          width: 300,
+                          child: TextWidget(
+                            maxLines: 3,
+                            text:
+                                'The code is provided by the enforcer upon aprehension and included on the printed receipt',
+                            fontSize: 11,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 5,
                       ),
                       Center(
                         child: ButtonWidget(
