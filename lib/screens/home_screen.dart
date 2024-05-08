@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:rta_web/screens/auth/login_screen.dart';
 import 'package:rta_web/utlis/colors.dart';
 import 'package:rta_web/widgets/button_widget.dart';
 
@@ -55,6 +56,55 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: 18,
                     fontFamily: 'Bold',
                     color: Colors.white,
+                  ),
+                  const Expanded(child: SizedBox()),
+                  IconButton(
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) => AlertDialog(
+                                title: const Text(
+                                  'Logout Confirmation',
+                                  style: TextStyle(
+                                      fontFamily: 'QBold',
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                content: const Text(
+                                  'Are you sure you want to Logout?',
+                                  style: TextStyle(fontFamily: 'QRegular'),
+                                ),
+                                actions: <Widget>[
+                                  MaterialButton(
+                                    onPressed: () =>
+                                        Navigator.of(context).pop(true),
+                                    child: const Text(
+                                      'Close',
+                                      style: TextStyle(
+                                          fontFamily: 'QRegular',
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  MaterialButton(
+                                    onPressed: () async {
+                                      Navigator.of(context).pushReplacement(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const LoginScreen()));
+                                    },
+                                    child: const Text(
+                                      'Continue',
+                                      style: TextStyle(
+                                          fontFamily: 'QRegular',
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ],
+                              ));
+                    },
+                    icon: const Icon(
+                      Icons.logout,
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),
@@ -145,7 +195,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       elevation: 10,
                                       child: Container(
                                         width: 550,
-                                        height: 300,
+                                        height: 320,
                                         decoration: BoxDecoration(
                                           border: Border.all(
                                             color: primary,
@@ -153,6 +203,231 @@ class _HomeScreenState extends State<HomeScreen> {
                                           ),
                                           borderRadius:
                                               BorderRadius.circular(15),
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              TextWidget(
+                                                text: 'VIOLATOR INFORMATION',
+                                                fontSize: 18,
+                                                fontFamily: 'Bold',
+                                                color: primary,
+                                              ),
+                                              const Divider(),
+                                              Row(
+                                                children: [
+                                                  const CircleAvatar(
+                                                    maxRadius: 30,
+                                                    minRadius: 30,
+                                                    backgroundColor:
+                                                        Colors.grey,
+                                                  ),
+                                                  const SizedBox(
+                                                      height: 140,
+                                                      child: VerticalDivider()),
+                                                  const SizedBox(
+                                                    width: 20,
+                                                  ),
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    children: [
+                                                      Row(
+                                                        children: [
+                                                          TextWidget(
+                                                            text:
+                                                                'Lance O. Olana',
+                                                            fontSize: 18,
+                                                            fontFamily:
+                                                                'Medium',
+                                                            color: Colors.black,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 200,
+                                                          ),
+                                                          TextWidget(
+                                                            text:
+                                                                'Signature here',
+                                                            fontSize: 12,
+                                                            fontFamily:
+                                                                'Regular',
+                                                            color: Colors.grey,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                          width: 300,
+                                                          child: Divider()),
+                                                      TextWidget(
+                                                        text: 'Address:',
+                                                        fontSize: 13,
+                                                        fontFamily: 'Regular',
+                                                        color: Colors.black,
+                                                      ),
+                                                      const SizedBox(
+                                                          width: 300,
+                                                          child: Divider()),
+                                                      TextWidget(
+                                                        text: 'License Number:',
+                                                        fontSize: 13,
+                                                        fontFamily: 'Regular',
+                                                        color: Colors.black,
+                                                      ),
+                                                      const SizedBox(
+                                                          width: 300,
+                                                          child: Divider()),
+                                                      Row(
+                                                        children: [
+                                                          TextWidget(
+                                                            text: 'Expiry:',
+                                                            fontSize: 13,
+                                                            fontFamily:
+                                                                'Regular',
+                                                            color: Colors.black,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 100,
+                                                          ),
+                                                          TextWidget(
+                                                            text: 'Prof',
+                                                            fontSize: 12,
+                                                            fontFamily:
+                                                                'Regular',
+                                                            color: Colors.grey,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 5,
+                                                          ),
+                                                          const Icon(
+                                                            Icons.check_box,
+                                                            color: Colors.grey,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          TextWidget(
+                                                            text: 'Non-Prof',
+                                                            fontSize: 12,
+                                                            fontFamily:
+                                                                'Regular',
+                                                            color: Colors.grey,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 5,
+                                                          ),
+                                                          const Icon(
+                                                            Icons
+                                                                .check_box_outline_blank,
+                                                            color: Colors.grey,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 10,
+                                                          ),
+                                                          TextWidget(
+                                                            text: 'SP',
+                                                            fontSize: 12,
+                                                            fontFamily:
+                                                                'Regular',
+                                                            color: Colors.grey,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 5,
+                                                          ),
+                                                          const Icon(
+                                                            Icons
+                                                                .check_box_outline_blank,
+                                                            color: Colors.grey,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                          width: 300,
+                                                          child: Divider()),
+                                                      Row(
+                                                        children: [
+                                                          TextWidget(
+                                                            text: 'Birthday:',
+                                                            fontSize: 13,
+                                                            fontFamily:
+                                                                'Regular',
+                                                            color: Colors.black,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 85,
+                                                          ),
+                                                          TextWidget(
+                                                            text:
+                                                                'Nationality:',
+                                                            fontSize: 13,
+                                                            fontFamily:
+                                                                'Regular',
+                                                            color: Colors.black,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                          width: 300,
+                                                          child: Divider()),
+                                                      Row(
+                                                        children: [
+                                                          TextWidget(
+                                                            text: 'Height:',
+                                                            fontSize: 13,
+                                                            fontFamily:
+                                                                'Regular',
+                                                            color: Colors.black,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 96,
+                                                          ),
+                                                          TextWidget(
+                                                            text: 'Weight:',
+                                                            fontSize: 13,
+                                                            fontFamily:
+                                                                'Regular',
+                                                            color: Colors.black,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      const SizedBox(
+                                                          width: 300,
+                                                          child: Divider()),
+                                                      Row(
+                                                        children: [
+                                                          TextWidget(
+                                                            text: 'Gender:',
+                                                            fontSize: 13,
+                                                            fontFamily:
+                                                                'Regular',
+                                                            color: Colors.black,
+                                                          ),
+                                                          const SizedBox(
+                                                            width: 90,
+                                                          ),
+                                                          TextWidget(
+                                                            text:
+                                                                'Rescriction:',
+                                                            fontSize: 13,
+                                                            fontFamily:
+                                                                'Regular',
+                                                            color: Colors.black,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -168,6 +443,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                 children: [
                                   Row(
                                     children: [
+                                      IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(Icons.refresh),
+                                      ),
+                                      IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(Icons.more_vert),
+                                      ),
+                                      const SizedBox(
+                                        width: 20,
+                                      ),
                                       Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
