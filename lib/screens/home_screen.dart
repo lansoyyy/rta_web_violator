@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:rta_web/screens/auth/login_screen.dart';
+import 'package:rta_web/screens/ticket_screen.dart';
 import 'package:rta_web/utlis/colors.dart';
 import 'package:rta_web/widgets/button_widget.dart';
 
@@ -567,35 +569,43 @@ class _HomeScreenState extends State<HomeScreen> {
                                   for (int i = 0; i < 5; i++)
                                     Column(
                                       children: [
-                                        SizedBox(
-                                          width: 575,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              Icon(
-                                                Icons.circle,
-                                                color: green,
-                                                size: 15,
-                                              ),
-                                              TextWidget(
-                                                text: 'No. TCT 2023 - 45790',
-                                                fontSize: 12,
-                                              ),
-                                              TextWidget(
-                                                text: 'Badge #12345',
-                                                fontSize: 12,
-                                              ),
-                                              TextWidget(
-                                                text:
-                                                    'November 01, 2023 | 1:35 PM',
-                                                fontSize: 12,
-                                              ),
-                                              TextWidget(
-                                                text: '₱500',
-                                                fontSize: 12,
-                                              ),
-                                            ],
+                                        GestureDetector(
+                                          onTap: () {
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        const TicketScreen()));
+                                          },
+                                          child: SizedBox(
+                                            width: 575,
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                Icon(
+                                                  Icons.circle,
+                                                  color: green,
+                                                  size: 15,
+                                                ),
+                                                TextWidget(
+                                                  text: 'No. TCT 2023 - 45790',
+                                                  fontSize: 12,
+                                                ),
+                                                TextWidget(
+                                                  text: 'Badge #12345',
+                                                  fontSize: 12,
+                                                ),
+                                                TextWidget(
+                                                  text:
+                                                      'November 01, 2023 | 1:35 PM',
+                                                  fontSize: 12,
+                                                ),
+                                                TextWidget(
+                                                  text: '₱500',
+                                                  fontSize: 12,
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
                                         const SizedBox(
