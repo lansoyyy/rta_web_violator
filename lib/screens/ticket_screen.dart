@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:rta_web/screens/auth/login_screen.dart';
@@ -136,7 +137,7 @@ class _TicketScreenState extends State<TicketScreen> {
                                 elevation: 10,
                                 child: Container(
                                   width: 550,
-                                  height: 500,
+                                  height: 550,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
                                     border: Border.all(color: Colors.black),
@@ -180,6 +181,259 @@ class _TicketScreenState extends State<TicketScreen> {
                                           ],
                                         ),
                                         const Divider(),
+                                        Row(
+                                          children: [
+                                            SizedBox(
+                                              width: 250,
+                                              height: 450,
+                                              child: Column(
+                                                children: [
+                                                  Center(
+                                                    child: TextWidget(
+                                                      text:
+                                                          'No. TCT 2023 - 00311',
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 20,
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      Image.asset(
+                                                        'assets/images/immigration-officer.png',
+                                                        height: 50,
+                                                      ),
+                                                      const SizedBox(
+                                                        width: 20,
+                                                      ),
+                                                      Container(
+                                                        height: 115,
+                                                        width: 175,
+                                                        color: Colors.blue[100],
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(5.0),
+                                                          child: Column(
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              TextWidget(
+                                                                text:
+                                                                    'Ticket issued by:',
+                                                                fontSize: 12,
+                                                              ),
+                                                              const SizedBox(
+                                                                height: 10,
+                                                              ),
+                                                              TextWidget(
+                                                                text:
+                                                                    'Badge ID:',
+                                                                fontSize: 11,
+                                                              ),
+                                                              TextWidget(
+                                                                text: 'Name:',
+                                                                fontSize: 11,
+                                                              ),
+                                                              TextWidget(
+                                                                text:
+                                                                    'Stationed:',
+                                                                fontSize: 11,
+                                                              ),
+                                                              TextWidget(
+                                                                text:
+                                                                    'Position:',
+                                                                fontSize: 11,
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 20,
+                                                  ),
+                                                  Center(
+                                                    child: TextWidget(
+                                                      text:
+                                                          'Time Remaining: 68:21',
+                                                      fontSize: 18,
+                                                      fontFamily: 'Bold',
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  const Divider(),
+                                                  const SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  TextWidget(
+                                                    maxLines: 5,
+                                                    text: '''
+SCAN VIA QR CODE TO PAY or PAY CASH IN AUTHORIZED RTA OFFICER IN CITY HALL
+''',
+                                                    fontSize: 11,
+                                                    color: Colors.grey,
+                                                  ),
+                                                  Container(
+                                                    width: 200,
+                                                    height: 150,
+                                                    color: Colors.grey,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              width: 20,
+                                            ),
+                                            SizedBox(
+                                              width: 250,
+                                              height: 450,
+                                              child: Column(
+                                                children: [
+                                                  Center(
+                                                    child: TextWidget(
+                                                      text:
+                                                          'TRAFFIC VIOLATIONS AND PENALTIES',
+                                                      fontSize: 13,
+                                                      fontFamily: 'Bold',
+                                                    ),
+                                                  ),
+                                                  const Divider(),
+                                                  Align(
+                                                    alignment:
+                                                        Alignment.topRight,
+                                                    child: Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        TextWidget(
+                                                          text:
+                                                              'FINES/PENALTIES',
+                                                          fontSize: 14,
+                                                          fontFamily: 'Bold',
+                                                        ),
+                                                        TextWidget(
+                                                          text:
+                                                              'OFFENSE FREQUENCY',
+                                                          fontSize: 10,
+                                                          color: Colors.grey,
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  const Divider(),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      TextWidget(
+                                                        text: 'CODE',
+                                                        fontSize: 12,
+                                                        color: Colors.black,
+                                                      ),
+                                                      TextWidget(
+                                                        text: 'VIOLATION',
+                                                        fontSize: 12,
+                                                        color: Colors.black,
+                                                      ),
+                                                      TextWidget(
+                                                        text: '1st',
+                                                        fontSize: 12,
+                                                        color: Colors.black,
+                                                      ),
+                                                      TextWidget(
+                                                        text: '2nd',
+                                                        fontSize: 12,
+                                                        color: Colors.black,
+                                                      ),
+                                                      TextWidget(
+                                                        text: '3rd',
+                                                        fontSize: 12,
+                                                        color: Colors.black,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  for (int i = 0; i < 10; i++)
+                                                    Column(
+                                                      children: [
+                                                        Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            TextWidget(
+                                                              text: '183',
+                                                              fontSize: 11,
+                                                              color:
+                                                                  Colors.grey,
+                                                            ),
+                                                            TextWidget(
+                                                              text:
+                                                                  'No License',
+                                                              fontSize: 11,
+                                                              color:
+                                                                  Colors.grey,
+                                                            ),
+                                                            TextWidget(
+                                                              text: 'P150',
+                                                              fontSize: 11,
+                                                              color:
+                                                                  Colors.grey,
+                                                            ),
+                                                            TextWidget(
+                                                              text: 'P300',
+                                                              fontSize: 11,
+                                                              color:
+                                                                  Colors.grey,
+                                                            ),
+                                                            TextWidget(
+                                                              text: 'P450',
+                                                              fontSize: 11,
+                                                              color:
+                                                                  Colors.grey,
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        const Divider(),
+                                                      ],
+                                                    ),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      TextWidget(
+                                                        text: 'Total:',
+                                                        fontSize: 12,
+                                                        color: Colors.black,
+                                                      ),
+                                                      TextWidget(
+                                                        text: '',
+                                                        fontSize: 12,
+                                                        color: Colors.black,
+                                                      ),
+                                                      TextWidget(
+                                                        text: 'P500',
+                                                        fontSize: 18,
+                                                        color: Colors.red,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ],
                                     ),
                                   ),
