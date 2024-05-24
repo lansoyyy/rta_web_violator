@@ -43,6 +43,7 @@ dependencies:
   firebase_auth:
   get_storage:
   intl:
+  qr_flutter:
 
 dev_dependencies:
   flutter_test:
