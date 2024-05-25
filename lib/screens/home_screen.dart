@@ -41,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print(widget.data['licenseno']);
     return Scaffold(
       backgroundColor: Colors.brown[50],
       body: Container(
@@ -250,11 +251,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 const Divider(),
                                                 Row(
                                                   children: [
-                                                    const CircleAvatar(
-                                                      maxRadius: 30,
-                                                      minRadius: 30,
-                                                      backgroundColor:
-                                                          Colors.grey,
+                                                    Icon(
+                                                      Icons
+                                                          .account_circle_rounded,
+                                                      color: primary,
+                                                      size: 75,
                                                     ),
                                                     const SizedBox(
                                                         height: 140,

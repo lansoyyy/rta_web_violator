@@ -139,6 +139,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   .doc(license.text)
                                   .get();
 
+                              print(license.text);
+
                               if (doc.exists) {
                                 Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) => HomeScreen(
@@ -146,7 +148,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                         )));
                               } else {
                                 showToast('Record do not exist!');
-                                Navigator.pop(context);
                               }
                             },
                           ),
